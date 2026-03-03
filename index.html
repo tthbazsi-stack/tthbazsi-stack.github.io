@@ -1,63 +1,319 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <title>Tóth Balázs Barnabás | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f1f5f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tóth Balázs Barnabás | Portfolio</title>
 
-        header {
-            text-align: center;
-            padding: 80px 20px;
-        }
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-        
-            
-        p.subtitle {
-            font-size: 20px;
-            color: #94a3b8;
-        }
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.10);
+      --border: rgba(255,255,255,0.10);
+      --text: #e5e7eb;
+      --muted: rgba(229,231,235,0.70);
+      --muted2: rgba(229,231,235,0.55);
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --shadow: 0 12px 40px rgba(0,0,0,0.35);
+      --radius: 16px;
+      --radius2: 22px;
+      --max: 1024px;
+    }
 
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 600px at 20% 0%, rgba(56,189,248,0.12), transparent 55%),
+        radial-gradient(900px 600px at 80% 10%, rgba(34,197,94,0.10), transparent 55%),
+        radial-gradient(1200px 800px at 50% 100%, rgba(255,255,255,0.06), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            transition: 0.3s;
-        }
+    a{ color: inherit; text-decoration: none; }
+    .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+    /* NAV */
+    .nav-wrap{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+    .brand{
+      display:flex; gap: 10px; align-items:center;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .dot{
+      width: 10px; height: 10px; border-radius: 99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(56,189,248,0.10);
+    }
+    .nav-links{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .nav-links a{
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: 0.2s;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .nav-links a:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+    }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #64748b;
-        }
+    /* HERO */
+    header{
+      padding: 64px 0 28px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 24px;
+      align-items: center;
+      padding: 28px;
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -0.6px;
+    }
+    .subtitle{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .chips{
+      display:flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .chip{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .chip b{ color: var(--text); font-weight: 600; }
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-    </style>
+    .hero-actions{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-self: end;
+      width: 100%;
+      max-width: 240px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.18);
+    }
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, rgba(56,189,248,0.95), rgba(34,197,94,0.90));
+      color: #051018;
+    }
+    .btn.primary:hover{
+      filter: brightness(1.03);
+    }
+    .btn small{ font-weight: 700; opacity: 0.85; }
+
+    /* SECTIONS */
+    section{
+      padding: 28px 0;
+    }
+    .section-title{
+      display:flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    h2{
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .hint{
+      color: var(--muted2);
+      font-size: 13px;
+    }
+
+    /* CARDS / GRID */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 6;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+      transition: 0.2s;
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      background: var(--panel-strong);
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+    .card p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .badges{
+      display:flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .badge{
+      font-size: 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .card-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .linkbtn{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+    .linkbtn:hover{
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-1px);
+    }
+
+    /* ABOUT / SKILLS blocks */
+    .wide{ grid-column: span 12; }
+    .two{ grid-column: span 6; }
+
+    ul.clean{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    ul.clean li{ margin: 6px 0; }
+
+    /* FOOTER */
+    footer{
+      padding: 26px 0 60px;
+      color: var(--muted2);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero{
+        grid-template-columns: 1fr;
+      }
+      .hero-actions{
+        justify-self: start;
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .card{ grid-column: span 12; }
+      .two{ grid-column: span 12; }
+    }
+  </style>
 </head>
+
+<body>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <span class="dot"></span>
+          <span>Balázs • Portfolio</span>
+        </div>
+        <div class="nav-links">
+          <a href="#projects">Projektek</a>
+          <a href="#about">Rólam</a>
+          <a href="#skills">Technológiák</a>
+          <a href="#contact">Kapcsolat</a>
+        </div>
+      </nav>
+    </div>
+  </div>
 <body>
 
 <header>
