@@ -314,57 +314,138 @@
       </nav>
     </div>
   </div>
-<body>
 
-<header>
-    <h1>Tóth Balázs Barnabás</h1>
-    <p class="subtitle">Business Informatics | C# Developer | Automation & Data Solutions</p>
-</header>
+  <header>
+    <div class="container">
+      <div class="hero">
+        <div>
+          <h1>Tóth Balázs Barnabás</h1>
+          <p class="subtitle">Business Informatics • C# Developer • Automation & Data Solutions</p>
 
-<section>
-    <h2>Projektek</h2>
-
-    <div class="card">
-        <h3>Phishing URL Detector</h3>
-        <p>C# WPF alkalmazás, amely rule-based logika segítségével vizsgálja a gyanús URL-eket.</p>
-        <p><a href="https://github.com/tthbazsi-stack/REPO_NEVE" target="_blank">
-            GitHub repo
-        </a>
-    </div>
-<h2>Bemutatkozás</h2>
-    <div class="card">
-        <p>
-            Frissen végzett gazdaságinformatikus vagyok üzleti és informatikai
-            szemlélettel. Korábbi nemzetközi gazdálkodási tanulmányaim megalapozták
-            folyamat-és szervezetközpontú gondolkodásomat, amelyet informatikai
-            rendszerek és adatkezelési feladatok területén kamatoztatok.
-            Tapasztalatot szereztem CRM alapú adatbázisok kialakításában
-            és strukturált adatkezelésben.
-        </p>
-    </div>
-        
-    <h2>Késségek</h2>
-    <div class "card">
-        <p>
-           <p>C#, Java - objektumorientált programozási alapok,</p> 
-           <p>SQL/MySQL - relációs adatbázis-kezelés, lekérdezések készítése,</p>
-           <p>Adatbázis-tervezés és adatmodellezés alapismeretek,</p>
-           <p>CRM adatbázis fejlesztése,</p>
-           <p>Excel scripts</p>
-        </p>
-    </div>
-        <h2>Kapcsolat</h2>
-        <div class="card">
-            <p>Email:tthbazsi@gmail.com</p>
-            <p>
-                <a href="https://github.com/tthbazsi-stack" target="_blank">GitHub</a>
-            </p>
+          <div class="chips">
+            <span class="chip"><b>C#</b> WPF / MVVM</span>
+            <span class="chip"><b>SQL</b> adatok & riportok</span>
+            <span class="chip"><b>Automation</b> Excel / Apps Script</span>
+            <span class="chip"><b>Security</b> phishing detection</span>
+          </div>
         </div>
-</section>
 
-<footer>
-    © 2026 Tóth Balázs Barnabás
-</footer>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Projektek megnyitása</a>
 
+          <!-- TODO: ide írd a GitHub profilodat -->
+          <a class="btn" href="https://github.com/tthbazsi-stack" target="_blank">GitHub profil</a>
+
+          <!-- TODO: később rakunk be CV PDF linket is -->
+          <a class="btn" href="#contact"><small>✉</small> Kapcsolat</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Projektek</h2>
+          <div class="hint">Kezdésnek 1 projekt is elég — később bővítjük.</div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Phishing URL Detector</h3>
+            <p>Rule-based URL elemzés C# WPF alkalmazásban. Külön rétegek (Domain/Services/UI), MVVM szemlélettel.</p>
+
+            <div class="badges">
+              <span class="badge">C#</span>
+              <span class="badge">WPF</span>
+              <span class="badge">MVVM</span>
+              <span class="badge">Rule Engine</span>
+              <span class="badge">CSV</span>
+            </div>
+
+            <ul class="clean">
+              <li>URL struktúra elemzés (hossz, kulcsszavak, jelek)</li>
+              <li>Bővíthető szabályrendszer a detektáláshoz</li>
+              <li>Dataset feldolgozás és tesztelhető logika</li>
+            </ul>
+           
+          <!-- Később ide jönnek új projektek kártyái -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>Rólam</h2>
+          <div class="hint">Frissen végzett gazdaságinformatikus vagyok üzleti és informatikaiszemlélettel.Nemzetközi gazdálkodási tanulmányaim megalapozták folyamat-és szervezetközpontú gondolkodásomat. </div>
+        </div>
+
+        <div class="grid">
+          <div class="card wide">
+            <p>
+              Gazdaságinformatikus háttérrel fejlesztéssel és automatizációval foglalkozom.
+              Szeretnék olyan megoldásokat építeni, amelyek üzleti igényekre adnak technikai választ:
+              adatfeldolgozás, rendszerezés, riportolás, és jól strukturált alkalmazások.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="Késségek">
+      <div class="container">
+        <div class="section-title">
+          <h2>Technológiák</h2>
+          <div class="hint">Amit tényleg használsz / projektben megvan.</div>
+        </div>
+
+        <div class="grid">
+          <div class="card two">
+            <h3>Fejlesztés</h3>
+            <ul class="clean">
+              <li>C#, .NET</li>
+              <li>WPF, MVVM</li>
+              <li>OOP, layered architecture</li>
+              <li>Git / GitHub</li>
+            </ul>
+          </div>
+
+          <div class="card two">
+            <h3>Adat & automatizáció</h3>
+            <ul class="clean">
+              <li>SQL alapok</li>
+              <li>JSON / XML</li>
+              <li>Excel automatizáció</li>
+              <li>Google Apps Script</li>
+              <li>Airtable (CRM, workflow)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+         <div class="grid">
+          <div class="card wide">
+            <p><b>Email:</b>tthbazsi@gmail.hu</p>
+            <p>
+              <b>GitHub:</b>
+              <a href="https://github.com/tthbazsi-stack" target="_blank">github.com/tthbazsi-stack</a>
+            </p>
+            <p><b>LinkedIn:</b> <!-- TODO --> link</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Tóth Balázs Barnabás • GitHub Pages
+  </footer>
 </body>
 </html>
